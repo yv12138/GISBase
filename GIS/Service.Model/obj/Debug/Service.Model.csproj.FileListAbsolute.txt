@@ -1,0 +1,10 @@
+C:\Users\hp\Desktop\GIS\Service.Model\bin\Debug\Service.Model.dll
+C:\Users\hp\Desktop\GIS\Service.Model\bin\Debug\Service.Model.pdb
+C:\Users\hp\Desktop\GIS\Service.Model\obj\Debug\Service.Model.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\GIS\Service.Model\obj\Debug\Service.Model.dll
+C:\Users\hp\Desktop\GIS\Service.Model\obj\Debug\Service.Model.pdb
+G:\GIS\Service.Model\bin\Debug\Service.Model.dll
+G:\GIS\Service.Model\bin\Debug\Service.Model.pdb
+G:\GIS\Service.Model\obj\Debug\Service.Model.csproj.CoreCompileInputs.cache
+G:\GIS\Service.Model\obj\Debug\Service.Model.dll
+G:\GIS\Service.Model\obj\Debug\Service.Model.pdb

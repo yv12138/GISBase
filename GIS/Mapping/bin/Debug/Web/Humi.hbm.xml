@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"  encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Entity" namespace="Entity.Web">
+  <class name="Entity.Web.Humi" table="Humi">
+    <id name="ID" column="ID">
+      <generator class='identity'>
+      </generator>
+    </id>
+    <property name="Date" column="Date" type="DateTime"  />
+    <property name="Title" column="Title" type="string"  />
+    <property name="Data" column="Data" type="string"  />
+  </class>
+</hibernate-mapping>

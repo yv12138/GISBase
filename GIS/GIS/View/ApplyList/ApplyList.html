@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>受理申请列表</title>
+    <script src="/Resources/js/base.js"></script>
+    <script src="/Resources/js/xadmin.js"></script>
+    <meta charset="utf-8" />
+    <style>
+        .layui-table-cell a {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-oneTable">
+    <!-- 搜索内容 -->
+    <div class="custom-searchWrap">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">业务号:</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input" type="text" name="YWH" placeholder="业务号">
+                    </div>
+                    <label class="layui-form-label">当前状态:</label>
+                    <div class="layui-input-inline">
+                        <select name="ZT" placeholder="当前状态">
+                            <option value="">当前状态</option>
+                            <option value="0">在线受理成功</option>
+                            <option value="1">审核成功</option>
+                            <option value="2">审核失败</option>
+                        </select>
+                    </div>
+                    <label class="layui-form-label">受理时间:</label>
+                    <div class="layui-input-inline">
+                        <input class="layui-input time-input" type="text" name="SLSJ" placeholder="受理时间" id="SLSJ" style="width:275px !important;">
+                    </div>
+                    <button type="button" class="layui-btn" onclick="search()"><i class="layui-icon">&#xe615;</i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--数据列表-->
+        <div class="page-bottomWrap">
+            <table id="list" lay-filter="list"></table>
+        </div>
+    </div>
+
+    <script src="js/applylist.js"></script>
+</body>
+</html>

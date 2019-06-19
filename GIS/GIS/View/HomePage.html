@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html class="x-admin-sm">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link href="../Resources/css/font.css" rel="stylesheet" />
+    <link href="../Resources/css/xadmin.css" rel="stylesheet" />
+    <script src="../Resources/js/jquery-2.0.3.min.js"></script>
+    <script src="../Resources/lib/layui/layui.js"></script>
+    <script src="../Resources/js/xadmin.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body ">
+                        <blockquote class="layui-elem-quote">
+                            欢迎您：
+                            <span class="x-red" id="userHomePage"></span>
+                            <span> ！</span>
+                            <span id="time"> </span>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm12 layui-col-md6">
+                <div class="layui-card">
+                    <div class="layui-card-header">最新一周办件量</div>
+                    <div class="layui-card-body" style="min-height: 280px;">
+                        <div id="main1" class="layui-col-sm12" style="height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm12 layui-col-md6">
+                <div class="layui-card">
+                    <div class="layui-card-header">最近两周收件量对比</div>
+                    <div class="layui-card-body" style="min-height: 280px;">
+                        <div id="main2" class="layui-col-sm12" style="height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm12 layui-col-md6">
+                <div class="layui-card">
+                    <div class="layui-card-header">收件列表状态统计</div>
+                    <div class="layui-card-body" style="min-height: 280px;">
+                        <div id="main3" class="layui-col-sm12" style="height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-sm12 layui-col-md6">
+                <div class="layui-card">
+                    <div class="layui-card-header">收件来源统计</div>
+                    <div class="layui-card-body" style="min-height: 280px;">
+                        <div id="main4" class="layui-col-sm12" style="height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Resources/echarts/echarts.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#userHomePage").text(parent.$("#userName").text());
+            displayTime();
+            timeStart();
+
+        })
+        //判断时间是否为个位数，如果时间为个位数就在时间之前补上一个“0”
+        function check(val) {
+            if (val < 10) {
+                return ("0" + val);
+            }
+            else {
+                return (val);
+            }
+        }
+        //每隔1秒调用一次displayTime函数
+        function timeStart() {
+            window.setInterval("displayTime()", 1000)//单位是毫秒
+        }
+        function displayTime() {
+            //获取div元素
+            var timeDiv = document.getElementById("time");
+            //获取系统当前的年、月、日、小时、分钟、毫秒
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hour = date.getHours();
+            var minutes = date.getMinutes();
+            var second = date.getSeconds();
+            var timestr = year + "年" + month + "月" + day + "日  " + check(hour)
+                + ":" + check(minutes) + ":" + check(second);
+            //将系统时间设置到div元素中
+            timeDiv.innerHTML = "当前时间:" + timestr;
+        }
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main1'));
+        var lineone = [];
+        var linetwo = [];
+        for (var i = 0; i < 7; i++) {
+            var b = parseInt(Math.random() * 200);
+            var d = parseInt(Math.random() * 200);
+            lineone.push(b)
+            linetwo.push(d);
+        }
+        // 指定图表的配置项和数据
+        var option = {
+            grid: {
+                top: '5%',
+                right: '1%',
+                left: '1%',
+                bottom: '10%',
+                containLabel: true
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            xAxis: {
+                type: 'category',
+                data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                name: '办件数',
+                data: lineone,
+                type: 'line',
+                smooth: true
+            }]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main2'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#6a7985'
+                    }
+                }
+            },
+            grid: {
+                top: '5%',
+                right: '2%',
+                left: '1%',
+                bottom: '10%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '上一周',
+                    type: 'line',
+                    areaStyle: { normal: {} },
+                    data: lineone,
+                    smooth: true
+                },
+                {
+                    name: '当前周',
+                    type: 'line',
+                    areaStyle: { normal: {} },
+                    data: linetwo,
+                    smooth: true,
+
+                }
+            ]
+        };
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main3'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ['在线受理成功', '审核通过', '受理成功', '审核失败']
+            },
+            series: [
+                {
+                    name: '收件状态',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [
+                        { value: parseInt(Math.random() * 200), name: '在线受理成功' },
+                        { value: parseInt(Math.random() * 200), name: '审核通过' },
+                        { value: parseInt(Math.random() * 200), name: '受理成功' },
+                        { value: parseInt(Math.random() * 200), name: '审核失败' },
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main4'));
+
+        var category = [];
+        var dottedBase = +new Date();
+        var lineData = [];
+        var barData = [];
+
+        for (var i = 0; i < 20; i++) {
+            var date = new Date(dottedBase -= 3600 * 24 * 1000);
+            category.push([
+                date.getFullYear(),
+                date.getMonth() + 1,
+                date.getDate()
+            ].join('-'));
+            var b = parseInt(Math.random() * 200);
+            var d = parseInt(Math.random() * 200);
+            barData.push(b)
+            lineData.push(d + b);
+        }
+        category = category.reverse();
+
+
+        // option
+        option = {
+            backgroundColor: '#0f375f',
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                },
+                formatter: function (params, ticket, callback) {
+                    var htmlStr = '';
+                    for (var i = 0; i < params.length; i++) {
+                        var param = params[i];
+                        var xName = param.name;//x轴的名称
+                        var seriesName = param.seriesName;//图例名称
+                        if (seriesName == "dotted" || seriesName == "line") {
+                            continue;
+                        }
+                        var color;
+                        var value = param.value;//y轴值
+                        if (seriesName == "自助办理机器受理"){
+                            color = " #2adacd";
+                        } else {
+                            color = param.color;//图例颜色
+                        }
+                        if (i === 0) {
+                            htmlStr += xName + '<br/>';//x轴的名称
+                        }
+                        htmlStr += '<div>';
+                        //为了保证和原来的效果一样，这里自己实现了一个点的效果
+                        htmlStr += '<span style="margin-right:5px;display:inline-block;width:10px;height:10px;border-radius:5px;background-color:' + color + ';"></span>';
+
+                        //圆点后面显示的文本
+                        htmlStr += seriesName + '：' + value + '条';
+
+                        htmlStr += '</div>';
+                    }
+                    return htmlStr;
+                }
+            },
+            legend: {
+                data: ['社会化网站受理', '自助办理机器受理'],
+                textStyle: {
+                    color: '#ccc'
+                }
+            },
+            xAxis: {
+                data: category,
+                axisLine: {
+                    lineStyle: {
+                        color: '#ccc'
+                    }
+                }
+            },
+            yAxis: {
+                splitLine: { show: false },
+                axisLine: {
+                    lineStyle: {
+                        color: '#ccc'
+                    }
+                }
+            },
+            series: [{
+                name: '社会化网站受理',
+                type: 'line',
+                smooth: true,
+                showAllSymbol: true,
+                symbol: 'emptyCircle',
+                symbolSize: 15,
+                data: lineData
+            }, {
+                name: '自助办理机器受理',
+                type: 'bar',
+                barWidth: 10,
+                itemStyle: {
+                    normal: {
+                        barBorderRadius: 5,
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                { offset: 0, color: '#14c8d4' },
+                                { offset: 1, color: '#43eec6' }
+                            ]
+                        )
+                    }
+                },
+                data: barData
+            }, {
+                name: 'line',
+                type: 'bar',
+                barGap: '-100%',
+                barWidth: 10,
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                { offset: 0, color: 'rgba(20,200,212,0.5)' },
+                                { offset: 0.2, color: 'rgba(20,200,212,0.2)' },
+                                { offset: 1, color: 'rgba(20,200,212,0)' }
+                            ]
+                        )
+                    }
+                },
+                z: -12,
+                data: lineData
+            }, {
+                name: 'dotted',
+                type: 'pictorialBar',
+                symbol: 'rect',
+                itemStyle: {
+                    normal: {
+                        color: '#0f375f'
+                    }
+                },
+                symbolRepeat: true,
+                symbolSize: [12, 4],
+                symbolMargin: 1,
+                z: -10,
+                data: lineData
+            }]
+        };
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        $("#main4 div:first-child").css("height", "280px");
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="/Resources/js/base.js"></script>
+    <link href="../../Resources/dtree/dtree.css" rel="stylesheet" />
+    <link href="../../Resources/dtree/font/dtreefont.css" rel="stylesheet" />
+    <script src="../../Resources/jquery-photo-gallery/jquery.photo.gallery.js"></script>
+    <style>
+        .layui-tab-item {
+            padding: 0px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-tab layui-tab-brief viewHtml" lay-filter="view">
+        <ul class="layui-tab-title">
+            <li class="layui-this">基本信息</li>
+            <li lay-id="fj">上报材料</li>
+            <li>受理意见</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="base_infoData layui-tab-item layui-show" id="div_view">
+                <div class="oneRow">
+                    <section class="baseItem">
+                        <span>业务号</span>
+                        <label id="txtYWH" name="YWH"></label>
+                    </section>
+                    <section class="baseItem">
+                        <span>登记类型</span>
+                        <label id="txtDJLX" name="DJLX"></label>
+                    </section>
+                </div>
+                <div class="oneRow">
+                    <section class="baseItem">
+                        <span>是否代理</span>
+                        <label id="txtSFDL" name="SFDL"></label>
+                    </section>
+                    <section class="baseItem">
+                        <span>是否分别持证</span>
+                        <label id="txtSFFBCZ" name="SFFBCZ"></label>
+                    </section>
+                </div>
+                <div class="oneRow">
+                    <section class="baseItem">
+                        <span>预售合同号</span>
+                        <label id="txtYSHTH" name="YSHTH"></label>
+                    </section>
+                    <section class="baseItem">
+                        <span>不动产权证号</span>
+                        <label id="txtBDCQZH" name="BDCQZH"></label>
+                    </section>
+                </div>
+                <div class="oneRow">
+                    <section class="baseItem">
+                        <span>区县代码</span>
+                        <label id="txtQXDM" name="QXDM"></label>
+                    </section>
+                    <section class="baseItem">
+                        <span>受理时间</span>
+                        <label id="txtSLSJ" name="SLSJ"></label>
+                    </section>
+                </div>
+                <div class="oneRow">
+                    <section class="baseItem">
+                        <span>当前状态</span>
+                        <label id="txtZT" name="ZT"></label>
+                    </section>
+                    <!--<section class="baseItem">
+                        <span>审核时间</span>
+                        <label id="txtSHSJ" name="SHSJ"></label>
+                    </section>-->
+                </div>
+                <div class="oneRow">
+                    <section class="baseItem">
+                        <span>备注</span>
+                        <label id="txtBZ" name="BZ"></label>
+                    </section>
+                </div>
+                <!--<div class="oneRow">
+                    <section class="baseItem">
+                        <span>审核意见</span>
+                        <label id="txtSHYJ" name="SHYJ"></label>
+                    </section>
+                    <section class="baseItem">
+                        <span>类型</span>
+                        <label id="txtTYPE" name="TYPE"></label>
+                    </section>
+                </div>-->
+                <div class="layui-form-item">
+                    <div class="layui-tab layui-tab-brief" lay-filter="personInfo">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">相关信息</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="layui-form-item form-item-left">
+                    <div class="page-bottomWrap">
+                        <table id="personList" lay-filter="personList"></table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--上报材料-->
+            <div class="layui-tab-item">
+                <div class="tree_div">
+                    <div class="tree_divleft">
+                        <ul id="demoTree" class="dtree" data-id="0"></ul>
+                    </div>
+                    <div class="tree_divright">
+                        <img class="gallery-pic" title="双击查看" alt="" src="../../Resources/images/fj.png" style="border: 1px solid #ececec;height:auto;" id="fjShow" ondblclick="$.openPhotoGallery(this)" />
+                    </div> 
+                </div>
+            </div>
+            <!--审核意见-->
+            <div class="layui-tab-item">
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label" style="width:90px !important;">审核意见</label>
+                    <div class="layui-input-block">
+                        <textarea name="SHYJ" id="txtSHYJ" placeholder="请输入内容" class="layui-textarea" style="height:150px !important;"></textarea>
+                    </div>
+                </div>
+                <button type="button" class="layui-btn" style="margin-top:2%;margin-left:46%;" id="btnCheck">通过</button>
+                <button type="button" class="layui-btn" style="margin-top:2%;margin-left:2%;" id="btnBack">退件</button>
+            </div>
+        </div>
+    </div>
+    <script charset="utf-8" src="js/applylistview.js"></script>
+</body>
+</html>

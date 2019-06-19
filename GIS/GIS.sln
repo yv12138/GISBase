@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIS", "GIS\GIS.csproj", "{C6817668-DD5A-4419-B896-A63451F4D414}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Model", "Service.Model\Service.Model.csproj", "{302459FB-B99D-4035-A567-C508EF08B16C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.DBOperator", "Service.DBOperator\Service.DBOperator.csproj", "{AB741BD7-AA68-4F54-B4F6-65B383991D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Common", "Service.Common\Service.Common.csproj", "{33083CCA-E603-4B6B-A380-35597AEE1838}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{C964082C-DEE4-4A0D-936A-3660A624B8BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapping", "Mapping\Mapping.csproj", "{2189544E-5FF8-48CF-9F57-BB22C3D622D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{529277E9-7FA6-4302-8699-442D04592B38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6817668-DD5A-4419-B896-A63451F4D414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6817668-DD5A-4419-B896-A63451F4D414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6817668-DD5A-4419-B896-A63451F4D414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6817668-DD5A-4419-B896-A63451F4D414}.Release|Any CPU.Build.0 = Release|Any CPU
+		{302459FB-B99D-4035-A567-C508EF08B16C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302459FB-B99D-4035-A567-C508EF08B16C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302459FB-B99D-4035-A567-C508EF08B16C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302459FB-B99D-4035-A567-C508EF08B16C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB741BD7-AA68-4F54-B4F6-65B383991D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB741BD7-AA68-4F54-B4F6-65B383991D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB741BD7-AA68-4F54-B4F6-65B383991D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB741BD7-AA68-4F54-B4F6-65B383991D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33083CCA-E603-4B6B-A380-35597AEE1838}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33083CCA-E603-4B6B-A380-35597AEE1838}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33083CCA-E603-4B6B-A380-35597AEE1838}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33083CCA-E603-4B6B-A380-35597AEE1838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C964082C-DEE4-4A0D-936A-3660A624B8BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C964082C-DEE4-4A0D-936A-3660A624B8BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C964082C-DEE4-4A0D-936A-3660A624B8BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C964082C-DEE4-4A0D-936A-3660A624B8BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2189544E-5FF8-48CF-9F57-BB22C3D622D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2189544E-5FF8-48CF-9F57-BB22C3D622D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2189544E-5FF8-48CF-9F57-BB22C3D622D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2189544E-5FF8-48CF-9F57-BB22C3D622D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529277E9-7FA6-4302-8699-442D04592B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529277E9-7FA6-4302-8699-442D04592B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529277E9-7FA6-4302-8699-442D04592B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529277E9-7FA6-4302-8699-442D04592B38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C0E0114-E6F3-4FC6-8FC8-96FBE60905DB}
+	EndGlobalSection
+EndGlobal

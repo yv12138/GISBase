@@ -1,0 +1,10 @@
+C:\Users\hp\Desktop\GIS\Entity\bin\Debug\Entity.dll
+C:\Users\hp\Desktop\GIS\Entity\bin\Debug\Entity.pdb
+C:\Users\hp\Desktop\GIS\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\GIS\Entity\obj\Debug\Entity.dll
+C:\Users\hp\Desktop\GIS\Entity\obj\Debug\Entity.pdb
+G:\GIS\Entity\bin\Debug\Entity.dll
+G:\GIS\Entity\bin\Debug\Entity.pdb
+G:\GIS\Entity\obj\Debug\Entity.csproj.CoreCompileInputs.cache
+G:\GIS\Entity\obj\Debug\Entity.dll
+G:\GIS\Entity\obj\Debug\Entity.pdb
